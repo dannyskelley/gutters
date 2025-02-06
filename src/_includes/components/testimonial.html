@@ -101,7 +101,7 @@
           top: -1.5rem;
       }
       #reviews-245 .cs-item-text {
-          font-size: 1rem;
+     font-size: clamp(1.275rem, 1.4vw, 1.2rem);
           line-height: 1.5em;
           margin: 0 0 1.5rem;
           color: var(--bodyTextColor);
@@ -161,8 +161,8 @@
       }
       #reviews-245 .cs-item {
           /* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 22.5vw to get the desired sizes fit 4 in a row and then stack when you add more*/
-          width: clamp(31.5%, 30vw, 32.3%);
-          max-width: 25.8125rem;
+          width: clamp(61.5%, 30vw, 62.3%);
+          max-width: 900px;
           align-content: space-between;
       }
       #reviews-245 .cs-flex-group {
@@ -202,98 +202,30 @@
         <div class="cs-content" style="text-align: center; margin: auto;">
             <h1 data-aos="fade-up" style="display: block; text-align: center; "><span class="cs-topper" style="display: inline;"> <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
             </span>
-            <span class="cs-title" data-aos="fade-up" style="color: var(--primaryDark); display: block;text-align: center; margin: auto;">5 Star Gutter Services Reviews</span></h1>
-            <span class="cs-topper" style="margin: auto;  margin-top:40px; color: #666">Comming Soon!</span>
+            <span class="cs-title" data-aos="fade-up" style="color: black; display: block;text-align: center; margin: auto;">5 Star Gutter Services Reviews</span></h1>
+            
             <!--<p class="cs-text">
               I value my customers’ homes and businesses and treat them as though they were my own. I clean up thoroughly and leave your property as I found it. It's all about the service: I treat you the way I would want to be treated. 
             </p>-->
         </div>
-       <!--<ul class="cs-card-group">
+     <ul class="cs-card-group">
             
             <li class="cs-item">
                 <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
                 <p class="cs-item-text">
-                    Excellent service! The team was punctual, professional, and went above and beyond to meet our needs. Highly recommend their services to anyone looking for reliable help.
+                    Had experience with two companies for different issues.  Tyler and Tenacious Gutter was by far the best.  He was recommended to me by a friend and this guy is a gem!  Frankly fantastic.  Pro from start to finish.  Reachable when you need him, excellent communication and fair pricing.  I installed gutter-guards and I cannot be happier.  He was so good and friendly that I preferred having him fix what the other company should have.  Cannot recommend more.
                 </p>
                 <div class="cs-flex-group">
                     <span class="cs-reviewer">
-                        Alex Johnson
+                      <a target="_blank" href="https://maps.app.goo.gl/fDcF6VnbniRMQfYR9">Google Review</a> 
                     </span>
                     <span class="cs-rating">5.0</span>
                     <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
                 </div>
             </li>
         
-            <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
-                <p class="cs-item-text">
-                    Fantastic job! They were quick, efficient, and left everything looking better than ever. I’ll definitely be using their services again in the future.
-                </p>
-                <div class="cs-flex-group">
-                    <span class="cs-reviewer">
-                        Jamie Carter
-                    </span>
-                    <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
-                </div>
-            </li>
-        
-            <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
-                <p class="cs-item-text">
-                    The team was extremely knowledgeable and friendly. They made the whole process smooth and stress-free. I couldn’t be happier with the results!
-                </p>
-                <div class="cs-flex-group">
-                    <span class="cs-reviewer">
-                        Taylor Morgan
-                    </span>
-                    <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
-                </div>
-            </li>
-        
-            <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
-                <p class="cs-item-text">
-                    From start to finish, the experience was incredible. They were professional, attentive, and delivered exactly what they promised. Five stars all the way!
-                </p>
-                <div class="cs-flex-group">
-                    <span class="cs-reviewer">
-                        Chris Adams
-                    </span>
-                    <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
-                </div>
-            </li>
-        
-            <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
-                <p class="cs-item-text">
-                    Great service! They communicated clearly, arrived on time, and exceeded my expectations. I’d recommend them to anyone without hesitation.
-                </p>
-                <div class="cs-flex-group">
-                    <span class="cs-reviewer">
-                        Morgan Lee
-                    </span>
-                    <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
-                </div>
-            </li>
-        
-            <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="profile picture" width="72" height="72">
-                <p class="cs-item-text">
-                    I’ve never had a better experience! They took care of everything with incredible attention to detail. I’ll definitely be using their services again!
-                </p>
-                <div class="cs-flex-group">
-                    <span class="cs-reviewer">
-                        Riley Thompson
-                    </span>
-                    <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
-                </div>
-            </li>
-        </ul>-->
+           
+        </ul>
         
 
   

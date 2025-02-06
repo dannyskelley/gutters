@@ -116,7 +116,7 @@
   }
   #sbsr-2217 .cs-picture img {
     width: 100%;
-    height: 100%;
+height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -140,8 +140,9 @@
   }
   #sbsr-2217 .cs-picture3 {
     width: 13.625em;
-    height: 9.6875em;
-    top: 5.25em;
+    height: 19.6875em;
+    top: 0;
+    border: 4px solid #FFFFFF;
     right: 4.6875em;
   }
   #sbsr-2217 .cs-graphic {
@@ -158,7 +159,11 @@
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-
+  #sbsr-2217 .cs-picture img {
+    width: 100%;
+height: auto;
+  }
+  #sbsr-2217 .cs-picture3 {border: 0px;}
     
   #sbsr-2217 .cs-container {
     max-width: 80rem;
@@ -196,23 +201,23 @@
             <!--Bottom right image-->
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/4.jpg">
+                <source media="(max-width: 600px)" srcset="/assets/images/2-3.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/4.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/4.jpg" alt="photograph of a woman" width="405" height="376">
+                <source media="(min-width: 601px)" srcset="/assets/images/2-3.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/2-3.jpg" alt="photograph of a woman" width="405" height="376">
             </picture>
             <!--Middle image-->
             <picture class="cs-picture cs-picture3">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/5.jpg">
+                <source media="(max-width: 600px)" srcset="/assets/images/2-2.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/5.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/5.jpg" alt="children's birthday" width="218" height="155">
+                <source media="(min-width: 601px)" srcset="/assets/images/2-2.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/2-2.jpg" alt="children's birthday" width="218" height="255">
             </picture>
         </div>
         <div class="cs-content">
-        
-            <h2 class="cs-title">Protecting Houston Homes with Precision & Care</h2>
+        <div class="cs-topper">Expert Gutter Installation & Maintenance</div>
+            <h2 class="cs-title">Protecting Houston Homes with Precision <Span style="color: var(--primaryDark);"> &</Span> Care</h2>
        
             <p class="cs-text">
             

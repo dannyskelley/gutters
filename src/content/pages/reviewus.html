@@ -1,8 +1,10 @@
 ---
 title: 'Service'
 description: 'Service'
-permalink: 'reviewus/'
-
+permalink: 'houston-5-star-gutter-reviews/'
+eleventyNavigation:
+    key: Reviews
+    order: 500
 ---
 
 
@@ -16,11 +18,15 @@ permalink: 'reviewus/'
 {% block body %}
 
 
+{% include 'components/reviews_header.html' %}
 
 
 
+{% include 'components/testimonials.html' %}
 
-{% include 'components/reviewus.html' %}
+{% include 'components/faq.html' %}
+{% include 'components/map.html' %}
 
+{% include 'components/cta.html' %}
 
 {% endblock %}

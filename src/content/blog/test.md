@@ -1,6 +1,9 @@
 ---
 title: Why Seamless Gutters Are a Smart Investment for Your Home
-description: Why Seamless Gutters Are a Smart Investment for Your Home
+description: "Upgrade your home with seamless gutters for a sleek, leak free,
+  and low maintenance solution. Designed as a single, continuous piece, they
+  prevent costly water damage while enhancing curb appeal. Durable, efficient,
+  and cost effective. "
 author: Tenacious
 date: 2025-02-07T12:19:00.000Z
 tags:

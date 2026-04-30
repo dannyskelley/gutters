@@ -287,12 +287,12 @@
 
 
 <script>
-    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+    (function() {
+        const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
         for (const item of faqItems) {
-            const onClick = () => {
-            item.classList.toggle('active')
+            item.addEventListener('click', function() {
+                item.classList.toggle('active');
+            });
         }
-        item.addEventListener('click', onClick)
-        }
-                                
+    })();
 </script>

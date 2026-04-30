@@ -13,7 +13,18 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gutter Cleaning in Houston",
+    "serviceType": "Gutter Cleaning",
+    "description": "Professional gutter cleaning in Houston, TX. We clear debris, flush downspouts, and inspect for damage. Prevent water damage and costly repairs with regular cleanings.",
+    "provider": { "@type": "LocalBusiness", "@id": "https://tenaciousguttersystemshouston.com/#localbusiness" },
+    "areaServed": { "@type": "City", "name": "Houston" },
+    "url": "https://tenaciousguttersystemshouston.com/gutter-cleaning-houston/"
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -27,7 +38,7 @@ eleventyNavigation:
 
 {% include 'components/testimonial.html' %}
 
-{% include 'components/faq.html' %}
+{% include 'components/faq_cleaning.html' %}
 {% include 'components/map.html' %}
 
 {% include 'components/cta.html' %}

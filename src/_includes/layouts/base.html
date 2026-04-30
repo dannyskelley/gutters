@@ -47,6 +47,69 @@
 
         {% block head %}{% endblock %}
 
+        <!-- LocalBusiness Schema -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "{{ client.domain }}/#localbusiness",
+            "name": "{{ client.name }}",
+            "url": "{{ client.domain }}",
+            "telephone": "{{ client.phoneForTel }}",
+            "email": "{{ client.email }}",
+            "image": "{{ client.domain }}/assets/images/logo-small.png",
+            "logo": "{{ client.domain }}/assets/images/logo-small.png",
+            "description": "Tenacious Gutter Systems is a licensed and insured gutter company serving Houston, TX and surrounding areas. We specialize in gutter installation, replacement, repair, cleaning, and gutter guards.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Houston",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "29.8342",
+                "longitude": "-95.4713"
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Houston",
+                    "sameAs": "https://en.wikipedia.org/wiki/Houston"
+                },
+                {
+                    "@type": "City",
+                    "name": "Katy"
+                },
+                {
+                    "@type": "City",
+                    "name": "Sugar Land"
+                },
+                {
+                    "@type": "City",
+                    "name": "The Woodlands"
+                },
+                {
+                    "@type": "City",
+                    "name": "Pearland"
+                }
+            ],
+            "priceRange": "$$",
+            "sameAs": [
+                "{{ client.facebook | trim }}",
+                "{{ client.instagram | trim }}"
+            ],
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                    "opens": "07:00",
+                    "closes": "19:00"
+                }
+            ]
+        }
+        </script>
+
         <!--For home page, use service keywords for the title, including location for SEO.
         Other pages should just include the page name.
         

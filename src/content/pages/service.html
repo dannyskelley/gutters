@@ -13,7 +13,32 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gutter Installation in Houston",
+    "serviceType": "Gutter Installation",
+    "description": "Professional seamless gutter installation in Houston, TX. We install aluminum, copper, and steel gutters for residential homes. Free estimates, licensed and insured.",
+    "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://tenaciousguttersystemshouston.com/#localbusiness"
+    },
+    "areaServed": {
+        "@type": "City",
+        "name": "Houston",
+        "sameAs": "https://en.wikipedia.org/wiki/Houston"
+    },
+    "url": "https://tenaciousguttersystemshouston.com/gutter-installation-houston/",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "description": "Free estimate provided"
+        }
+    }
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -27,7 +52,7 @@ eleventyNavigation:
 
 {% include 'components/testimonial.html' %}
 
-{% include 'components/faq.html' %}
+{% include 'components/faq_installation.html' %}
 {% include 'components/map.html' %}
 
 {% include 'components/cta.html' %}

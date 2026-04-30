@@ -13,7 +13,18 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gutter Repair in Houston",
+    "serviceType": "Gutter Repair",
+    "description": "Fast, affordable gutter repair in Houston, TX. We fix leaks, sagging gutters, loose hangers, and damaged downspouts. Free inspection and estimate, same-week service.",
+    "provider": { "@type": "LocalBusiness", "@id": "https://tenaciousguttersystemshouston.com/#localbusiness" },
+    "areaServed": { "@type": "City", "name": "Houston" },
+    "url": "https://tenaciousguttersystemshouston.com/gutter-repair-houston/"
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -27,7 +38,7 @@ eleventyNavigation:
 
 {% include 'components/testimonial.html' %}
 
-{% include 'components/faq.html' %}
+{% include 'components/faq_repair.html' %}
 {% include 'components/map.html' %}
 
 {% include 'components/cta.html' %}

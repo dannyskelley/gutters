@@ -13,7 +13,18 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gutter Replacement in Houston",
+    "serviceType": "Gutter Replacement",
+    "description": "Expert gutter replacement in Houston, TX. We remove old, damaged gutters and install new seamless aluminum gutters. Fast service, free estimates, fully licensed and insured.",
+    "provider": { "@type": "LocalBusiness", "@id": "https://tenaciousguttersystemshouston.com/#localbusiness" },
+    "areaServed": { "@type": "City", "name": "Houston" },
+    "url": "https://tenaciousguttersystemshouston.com/gutter-replacement-houston/"
+}
+</script>
 {% endblock %}
 
 {% block body %}
@@ -27,7 +38,7 @@ eleventyNavigation:
 
 {% include 'components/testimonial.html' %}
 
-{% include 'components/faq.html' %}
+{% include 'components/faq_replacement.html' %}
 {% include 'components/map.html' %}
 
 {% include 'components/cta.html' %}

@@ -280,22 +280,34 @@ eleventyNavigation:
       <a href="tel:{{client.phoneForTel}}" style="font-size:1.3rem; font-weight:800; color:#000; background:var(--primary,#76d40e); padding:0.6rem 1.5rem; border-radius:6px; text-decoration:none; display:inline-block;">{{client.phoneFormatted}}</a>
     </div>
 
+    <div id="form-error-490" style="display:none; background:#fff3f3; border:2px solid #e00; border-radius:8px; padding:1rem 1.25rem; margin-top:1rem; color:#c00; font-weight:600;">
+      Something went wrong. Please call us directly at <a href="tel:{{client.phoneForTel}}" style="color:#c00;">{{client.phoneFormatted}}</a> or try again.
+    </div>
+
     <script>
     (function() {
       var form = document.getElementById('cs-form-490');
       var success = document.getElementById('form-success-490');
+      var errorMsg = document.getElementById('form-error-490');
       if (!form || !success) return;
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        var data = new URLSearchParams(new FormData(form)).toString();
+        var formData = new FormData(form);
+        var params = new URLSearchParams(formData);
+        params.append('form-name', form.getAttribute('name') || 'Contact Form');
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: data
-        }).then(function() {
-          form.style.display = 'none';
-          success.style.display = 'block';
-          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          body: params.toString()
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            if (errorMsg) errorMsg.style.display = 'none';
+            success.style.display = 'block';
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            if (errorMsg) errorMsg.style.display = 'block';
+          }
         }).catch(function() {
           form.submit();
         });

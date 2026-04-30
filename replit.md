@@ -33,3 +33,19 @@ A static marketing website for Tenacious Gutter Systems (Houston, TX), built wit
 - **Build command:** `npm run build`
 - **Public directory:** `public/`
 - Originally configured for Netlify; adapted for Replit deployment
+
+## SEO Improvements (Task #1 — complete)
+- Added LocalBusiness JSON-LD schema to `base.html` (site-wide)
+- Added Service + FAQPage schema to each of 5 service pages via dedicated FAQ components (`faq_installation.html`, `faq_replacement.html`, `faq_cleaning.html`, `faq_repair.html`, `faq_guards.html`)
+- Added AggregateRating schema to `reviews.html`
+- Added `noindex`/`nofollow` + `eleventyExcludeFromCollections: true` to `admin/index.html`, `qr.html`, `reviewus.html` — all excluded from sitemap
+- Fixed `client.json` state (MI→TX) and city fields
+- All pages now have unique, keyword-targeted title tags and meta descriptions
+
+## Conversion Rate Improvements (Task #2 — complete)
+- **Desktop header phone:** `header.html` — phone number with phone icon appears next to CTA on desktop
+- **Desktop CTA tel: links:** `cta_button.html`, `cta_button_hero.html` — desktop buttons now link to `tel:` + secondary "Request Online" button
+- **Trust bar:** `components/trust_bar.html` — "Licensed & Insured · Free Estimates · Same-Day Service · 5-Star Rated" strip; included on home page (`index.html`) and all 5 service pages
+- **Sticky mobile call button:** `base.html` — fixed green "Call Now" bar at bottom of mobile viewport
+- **Hero social proof:** `hero.html` — "Trusted by Houston homeowners since 2024 · Fully licensed & insured" line
+- **Contact page UX:** `contact.html` — heading changed to "Get Your Free Estimate", reduced-friction subtext, phone number in prominent green block, form success message with JS

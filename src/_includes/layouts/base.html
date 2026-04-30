@@ -153,6 +153,38 @@
           });
         </script>
 
+        <style>
+        #sticky-call-btn {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary, #76d40e);
+            color: #000;
+            text-align: center;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: "Poppins", Arial, sans-serif;
+            text-decoration: none;
+            z-index: 99998;
+            box-shadow: 0 -3px 12px rgba(0,0,0,0.25);
+            letter-spacing: 0.02em;
+        }
+        #sticky-call-btn:hover {
+            background: var(--primaryDark, #5aa80b);
+            color: #000;
+        }
+        @media only screen and (max-width: 63.9375rem) {
+            #sticky-call-btn {
+                display: block;
+            }
+        }
+        </style>
+        <a id="sticky-call-btn" href="tel:{{ client.phoneForTel }}" aria-label="Call us now">
+            &#128222; Call Now: {{ client.phoneFormatted }}
+        </a>
 
     </body>
 </html>

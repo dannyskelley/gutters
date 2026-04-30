@@ -222,11 +222,10 @@ eleventyNavigation:
     <!-- Contact Info -->
     <div class="cs-content">
 
-      <h2 class="cs-title">Contact Us</h2>
-      <span class="cs-text" style="margin-top: 50px;">
-
-Protect your home with the best gutter solutions in Houston. Contact us today for a free estimate!
-      </span>
+      <h2 class="cs-title">Get Your Free Estimate</h2>
+      <p class="cs-text" style="margin-top: 1rem; font-size: 1.05rem; color: #444;">
+        Get your free quote in 60 seconds — no commitment required. Call or text us anytime, or fill out the form and we'll get back to you fast.
+      </p>
       <!--<p class="cs-text">
                 Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. Eu volutpat odio facilisis mauris sit amet massa. Sit amet est placerat in egestas
             </p>-->
@@ -236,12 +235,16 @@ Protect your home with the best gutter solutions in Houston. Contact us today fo
             <a href="" class="cs-link">
                 PO Box 15252 Mill Creek, <br>Washington, USA 98082
             </a>-->
+      <!--Phone - most prominent -->
+      <div style="margin-top: 1.5rem; background: var(--primary, #76d40e); border-radius: 8px; padding: 1rem 1.25rem; display: inline-block;">
+        <span style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#000; margin-bottom:0.25rem;">Call or Text 24/7</span>
+        <a href="tel:{{client.phoneForTel}}" style="font-size:1.5rem; font-weight:800; color:#000; text-decoration:none; display:block;">{{client.phoneFormatted}}</a>
+      </div>
       <!--Email-->
-      <span class="cs-title" style="margin-top: 50px; display: block;">Email Us</span>
-      <a href="mailto:{{client.email}}" class="cs-link">{{client.email}}</a>
-      <!--Phone-->
-      <span class="cs-title" style="display: block; margin:50px 0px 10px;">Call or Text 24/7</span>
-      <a href="tel:{{client.phoneForTel}}" class="cs-title">{{client.phoneFormatted}}</a>
+      <div style="margin-top: 1.25rem;">
+        <span style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#888; margin-bottom:0.25rem;">Email</span>
+        <a href="mailto:{{client.email}}" class="cs-link" style="font-size:1rem;">{{client.email}}</a>
+      </div>
 
       <!--Social Buttons-->
       <div class="cs-social" style="margin: 80px 0px 30px; display: block;">
@@ -267,8 +270,30 @@ Protect your home with the best gutter solutions in Houston. Contact us today fo
         How can We Help?
         <textarea class="cs-input" required name="Message" id="message-490" placeholder=""></textarea>
       </label>
-      <button class="cs-button-solid" type="submit">Send</button>
+      <button class="cs-button-solid" type="submit">Send My Request</button>
     </form>
+
+    <div id="form-success-490" style="display:none; background:#f0fce8; border:2px solid var(--primary,#76d40e); border-radius:10px; padding:2rem; text-align:center; margin-top:1rem;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5aa80b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.75rem;" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <h3 style="font-size:1.3rem; font-weight:800; color:#222; margin:0 0 0.5rem;">You're all set!</h3>
+      <p style="color:#444; margin:0 0 1rem;">We received your request and will reach out shortly. For the fastest response, give us a call or text:</p>
+      <a href="tel:{{client.phoneForTel}}" style="font-size:1.3rem; font-weight:800; color:#000; background:var(--primary,#76d40e); padding:0.6rem 1.5rem; border-radius:6px; text-decoration:none; display:inline-block;">{{client.phoneFormatted}}</a>
+    </div>
+
+    <script>
+    (function() {
+      var form = document.getElementById('cs-form-490');
+      var success = document.getElementById('form-success-490');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          setTimeout(function() {
+            if (form) form.style.display = 'none';
+            if (success) success.style.display = 'block';
+          }, 300);
+        });
+      }
+    })();
+    </script>
   </div>
 </section>
 

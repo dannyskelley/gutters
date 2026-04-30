@@ -12,7 +12,7 @@
 /* At 1024px and above: show desktop, hide mobile */
 @media (min-width: 1024px) {
   .desktopShow {
-    display: inline-block; margin: auto; text-align: center; width: 100%; max-width: 900px;
+    display: inline-flex; margin: auto; text-align: center; width: 100%; max-width: 900px; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;
   }
 
   .mobileHide {
@@ -23,4 +23,7 @@
 </style>
 <DIV class="mobileHide"><a class="cs-button-solid" href="tel:{{client.phoneForTel}}">Get a Free Quote in Seconds</a></DIV>
 
-<DIV class="desktopShow"><a class="cs-button-solid" href="/contact">Get a Free Quote in Seconds</a></DIV>
+<DIV class="desktopShow">
+  <a class="cs-button-solid" href="tel:{{client.phoneForTel}}">Call: {{client.phoneFormatted}}</a>
+  <a class="cs-button-solid" style="background-color:#333; color:#fff;" href="/contact">Request Online</a>
+</DIV>

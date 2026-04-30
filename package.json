@@ -9,6 +9,7 @@
         "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve",
         "build:eleventy": "cross-env ELEVENTY_ENV=PROD eleventy",
         "watch:cms": "npx decap-server",
+        "dev": "del-cli ./public --force && npm-run-all --parallel watch:sass watch:eleventy",
         "start": "del-cli ./public --force && npm-run-all --parallel watch:*",
         "build": "run-s build:*"
     },

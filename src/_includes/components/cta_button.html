@@ -20,10 +20,14 @@
   }
 }
 
+.cs-btn-request:hover {
+  color: #000 !important;
+}
+
 </style>
 <DIV class="mobileHide"><a class="cs-button-solid" href="tel:{{client.phoneForTel}}">Get a Free Quote in Seconds</a></DIV>
 
 <DIV class="desktopShow">
   <a class="cs-button-solid" href="tel:{{client.phoneForTel}}">Call: {{client.phoneFormatted}}</a>
-  <a class="cs-button-solid" style="background-color:#333; color:#fff;" href="/contact">Request Online</a>
+  <a class="cs-button-solid cs-btn-request" style="background-color:#333; color:#fff;" href="/contact">Request Online</a>
 </DIV>

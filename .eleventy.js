@@ -57,6 +57,15 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "./src/robots.txt": "/robots.txt" });
     // END PASSTHROUGHS
 
+    // COLLECTIONS - Custom collections for use in templates
+    // HTML-only pages for the sitemap (excludes CSS/asset files that get swept into collections.all)
+    eleventyConfig.addCollection("htmlPages", function (collectionApi) {
+        return collectionApi.getAll().filter(item => {
+            return item.outputPath && item.outputPath.endsWith(".html");
+        });
+    });
+    // END COLLECTIONS
+
     // FILTERS - Modify data in template files at build time
     // Converts dates from JSDate format (Fri Dec 02 18:00:00 GMT-0600) to a locale format. More info in docs - https://moment.github.io/luxon/api-docs/index.html#datetime
     eleventyConfig.addFilter("postDate", filterPostDate);

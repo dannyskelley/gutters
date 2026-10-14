@@ -10,25 +10,23 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <link rel="preload" as="image" href="/assets/images/2-m.jpg" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/2.jpg" media="(min-width: 601px)" fetchpriority="high">
     <link rel="stylesheet" href="/assets/css/local.css" />
     <link rel="stylesheet" href="/assets/css/critical.css" />
 
   
     <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
+    <script>
+        // Only CMS invitation/recovery links need the identity widget here.
+        if (/(?:invite_token|recovery_token|confirmation_token)=/.test(location.hash)) {
+            const script = document.createElement('script');
+            script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+            script.onload = () => {
+                window.netlifyIdentity.on('login', () => location.assign('/admin/'));
+                window.netlifyIdentity.open();
+            };
+            document.head.appendChild(script);
         }
     </script>
 

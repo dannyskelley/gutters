@@ -9,8 +9,10 @@ const configSitemap = require("./src/config/sitemap");
 const configServer = require("./src/config/server");
 
 const filterPostDate = require("./src/config/postDate");
+const configureDelivery = require("./src/config/delivery");
 
 module.exports = function (eleventyConfig) {
+    configureDelivery(eleventyConfig);
     // EXTENSIONS - Recognising non-default languages as templates
     // Setting up CSS files to be recognised as a template language, and can be passed through eleventy. This allows our minifier to read CSS files and minify them
     eleventyConfig.addTemplateFormats("css");

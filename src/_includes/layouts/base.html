@@ -28,19 +28,23 @@
         <link rel="manifest" href="/assets/favicons//site.webmanifest">
 
         <!-- Preloads -->
-        <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/poppins-v21-latin-700.woff2" crossorigin>
 
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
-        {% if preloadImg != '' %}
+        {% if preloadImg %}
             <link rel="preload" as="image" href="{{ preloadImg }}" />
         {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->
         <link rel="stylesheet" href="/assets/css/root.css">
 
-        <link rel="stylesheet" href="/assets/aos/aos.css" />
+        <style>
+            @media (prefers-reduced-motion: no-preference) {
+                [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .4s ease; }
+                [data-reveal].is-visible { opacity: 1; transform: none; }
+            }
+        </style>
+        <script defer src="/assets/js/reveal.js"></script>
    
         <script defer src="/assets/js/nav.js"></script>
 
@@ -131,7 +135,7 @@
                 {{ client.name }}
             {% endif %}
         </title>
-        <script defer data-site-id="9ce6e2f845db7e660abf64c6d2755090" src="https://mywebsitevisits.com/api/script.js"></script>
+        <script defer crossorigin="anonymous" data-site-id="9ce6e2f845db7e660abf64c6d2755090" src="https://mywebsitevisits.com/api/script.js"></script>
     </head>
     <body>
         <!--Screen reader skip main nav-->
@@ -146,13 +150,6 @@
         {% include "components/footer.html" %}</DIV>
 
             
-        <script src="/assets/js/aos.js"></script>
-
-        <script>
-          AOS.init({
-            easing: 'ease-in-out-sine',
-          });
-        </script>
 
         <style>
         #sticky-call-btn {
@@ -186,7 +183,7 @@
             }
         }
         </style>
-        <a id="sticky-call-btn" href="tel:{{ client.phoneForTel }}" aria-label="Call us now">
+        <a id="sticky-call-btn" href="tel:{{ client.phoneForTel }}">
             &#128222; Call Now: {{ client.phoneFormatted }}
         </a>
 

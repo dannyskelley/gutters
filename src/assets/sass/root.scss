@@ -4,7 +4,10 @@
 <---        Core Styles         -->
 <--- -------------------------- -*/
 
-* {transition: all ease .3s;}
+a, button {transition: color .2s, background-color .2s, transform .2s;}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
 .cs-link {color:midnightblue;}
 
 /* CodeStitch Root and Helpers */
@@ -15,7 +18,7 @@
         --primary: #FF7B3F;
         --primaryDark: black;
         --primaryDarkDark: black;
-        --primaryDarker:#d34706;
+        --primaryDarker:#c54105;
         --headerScroll: black;
         --mobileNav: black;
         --callBg: black;
@@ -48,7 +51,7 @@
         font-size: var(--topperFontSize);
         line-height: 1.2em;
         font-weight: 700;
-        color: #d34706;
+        color: #c54105;
         text-align: inherit;
     }
 

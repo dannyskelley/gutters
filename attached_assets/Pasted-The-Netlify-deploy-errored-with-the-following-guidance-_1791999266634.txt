@@ -1,0 +1,116 @@
+The Netlify deploy errored, with the following guidance provided:
+
+The build fails at [line 81](#L81) because `run-s` is not found. This command comes from the `npm-run-all` package, which is used in the `build` script in `package.json` but was not installed successfully.
+
+Looking at [lines 29–32](#L29-L32), npm exited with an internal error during dependency installation. Despite this, [line 33](#L33) reports "npm packages installed" — meaning the install likely completed partially, and `npm-run-all` (which provides `run-s`) was not installed.
+
+**Solution**
+
+1. First, verify that `npm-run-all` (or `npm-run-all2`) is listed as a dependency in your [`package.json`](https://github.com/dannyskelley/gutters/blob/main/package.json). It should appear under `dependencies` or `devDependencies`:
+
+```json
+{
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
+```
+
+2. If it's missing, add it locally and commit:
+
+```bash
+npm install --save-dev npm-run-all
+git add package.json package-lock.json
+git commit -m "Add npm-run-all dependency"
+git push
+```
+
+3. Additionally, [lines 62–64](#L62-L64) warn that the **Node.js version 18.20.8 is below the minimum required** for the `@netlify/plugin-lighthouse` plugin. You should upgrade your Node.js version. See the [Netlify documentation for changing Node versions](https://docs.netlify.com/configure-builds/manage-dependencies/#node-js-and-javascript) for instructions on how to set a higher version (e.g., Node 20) via a `NODE_VERSION` environment variable or a `.node-version`/`.nvmrc` file.
+
+The relevant error logs are:
+
+Line 0: build-image version: ea8920232ffbe23506ef69aa99aa2258559fbd91 (noble-new-builds)
+Line 1: buildbot version: 2fc3d01f81896515ea624e4e952935489b0f651c
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/dannyskelley/gutters
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Installing dependencies
+Line 9: mise by @jdx – installing 1 tool
+Line 10: mise ⇢ python@3.14.3  682ms · already installed
+Line 11: mise ████████████████ 1/1 · installed 0 tools · 1 already installed in 683ms
+Line 12: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 13: mise by @jdx – installing 1 tool
+Line 19: mise ████████████████ 1/1 · installed 0 tools · 1 already installed in 37ms
+Line 20: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 21: v18.20.8 is already installed.
+Line 22: Now using node v18.20.8 (npm v10.8.2)
+Line 23: Enabling Node.js Corepack
+Line 24: No npm workspaces detected
+Line 25: Installing npm packages using npm version 10.8.2
+Line 26: npm warn deprecated @hapi/formula@2.0.0: Moved to 'npm install @sideway/formula'
+Line 27: npm warn deprecated @hapi/address@4.1.0: Moved to 'npm install @sideway/address'
+Line 28: npm warn deprecated @hapi/joi@17.1.1: Switch to 'npm install joi'
+Line 29: npm error Exit handler never called!
+Line 30: npm error This is an error with npm itself. Please report this error at:
+Line 31: npm error   <https://github.com/npm/cli/issues>
+Line 32: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-10-14T15_48_28_836Z-debug-0.log
+Line 33: npm packages installed
+Line 34: Successfully installed dependencies
+Line 35: Detected 1 framework(s)
+Line 36: "eleventy" at version "2.0.1"
+Line 37: Starting build script
+Line 38: Section completed: initializing
+Line 39: ​
+Line 40: Netlify Build                                                 
+Line 41: ────────────────────────────────────────────────────────────────
+Line 42: ​
+Line 62:   The plugin cannot be executed with your defined Node.js version 18.20.8
+Line 63: ​
+Line 64:   Read more about our minimum required version in our ttps://answers.netlify.com/t/build-plugins-end-of-support-for-n
+Line 65: ​
+Line 66: ❯ Installing plugins
+Line 67:    - @netlify/plugin-lighthouse@6.0.1
+Line 68: ​
+Line 69: ❯ Loading plugins
+Line 70:    - @netlify/plugin-lighthouse@6.0.1 from netlify.toml
+Line 71:    - netlify-plugin-cache@1.0.3 from netlify.toml and package.json
+Line 72: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 73: A cache of 'public/assets/images, .cache' doesn't exist (yet).
+Line 74: ​
+Line 75: build.command from netlify.toml                               
+Line 76: ────────────────────────────────────────────────────────────────
+Line 77: ​
+Line 78: $ npm run build
+Line 79: > starter-kit-v4@1.0.0 build
+Line 80: > run-s build:*
+Line 81: sh: 1: run-s: not found
+Line 82: ​
+Line 83: "build.command" failed                                        
+Line 84: ────────────────────────────────────────────────────────────────
+Line 85: ​
+Line 86:   Error message
+Line 87:   Command failed with exit code 127: npm run build
+Line 88: ​
+Line 89:   Error location
+Line 90:   In build.command from netlify.toml:
+Line 91:   npm run build
+Line 92: ​
+Line 93:   Resolved config
+Line 94:   build:
+Line 95:     command: npm run build
+Line 96:     commandOrigin: config
+Line 97:     publish: /opt/build/repo/public
+Line 98:     publishOrigin: config
+Line 99:   plugins:
+Line 100:     - inputs: {}
+Line 101:       origin: config
+Line 102:       package: "@netlify/plugin-lighthouse"
+Line 103:     - inputs: {}
+Line 104:       origin: config
+Line 105:       package: netlify-plugin-cache
+Line 106: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 107: Failing build: Failed to build site
+Line 108: Finished processing build request in 1m31.477s

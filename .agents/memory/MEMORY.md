@@ -1,1 +1,2 @@
 - [Performance auditing](performance-auditing.md) — audit the production build separately from the dev server; preserve requested analytics.
+- [Netlify package portability](netlify-package-portability.md) — check lockfile registry URLs after package changes; external builds cannot use internal registry hosts.

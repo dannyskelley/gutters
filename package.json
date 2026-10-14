@@ -11,7 +11,7 @@
         "watch:cms": "npx decap-server",
         "dev": "del-cli ./public --force && npm-run-all --parallel watch:sass watch:eleventy",
         "start": "del-cli ./public --force && npm-run-all --parallel watch:*",
-        "build": "run-s build:*"
+        "build": "npm run build:sass && npm run build:eleventy"
     },
     "repository": {
         "type": "git",
